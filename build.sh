@@ -20,6 +20,8 @@ pip install -r requirements.txt
 # Create necessary directories
 mkdir -p static staticfiles media
 
+python manage.py collectstatic --noinput --clear
+
 # Make fresh migrations
 python manage.py makemigrations --noinput
 
@@ -27,7 +29,7 @@ python manage.py makemigrations --noinput
 python manage.py migrate --noinput
 
 # Collect static files
-python manage.py collectstatic --noinput --clear
+
 
 # Create superuser (ensure no input errors with default or env variable overrides)
 DJANGO_SUPERUSER_EMAIL="${DJANGO_SUPERUSER_EMAIL:-admin@example.com}"
