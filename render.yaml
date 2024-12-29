@@ -1,0 +1,5 @@
+routes:
+  - type: static
+    name: static
+    path: /static/*
+    source: staticfiles
